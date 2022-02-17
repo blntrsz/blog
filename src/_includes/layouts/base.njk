@@ -5,13 +5,13 @@
     <meta name="description" content="{{ description  }}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/blog/assets/main.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link defer rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
   </head>
   <body class="min-h-screen text-white bg-dark-500 font-bold px-6 max-w-2xl m-auto">
     {% include "../components/navigation.njk" %}
     <main class="max-w-2xl m-auto">
       {{ content | safe }}
     </main>
-    <script src="/assets/main.js"></script>
+    <script src="/blog/assets/main.js"></script>
   </body>
 </html>
