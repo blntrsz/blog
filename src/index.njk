@@ -1,0 +1,11 @@
+---
+title: Home
+description: Balint Orosz's blog
+layout: layouts/base.njk
+---
+
+<div class="space-y-8">
+
+  {% set postslist = collections.posts %}
+  {% include "components/postslist.njk" %}
+</div>
