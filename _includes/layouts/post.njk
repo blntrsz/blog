@@ -1,0 +1,9 @@
+---
+layout: layouts/base.njk
+---
+
+<header>
+    <h1>{{title}}</h1>
+    <time class="time-1-0-0">{{ date | readableDate }}</time>
+</header>
+<article>{{ content | safe }}</article>

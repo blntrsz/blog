@@ -1,0 +1,17 @@
+<ul>
+  {% for post in postslist %}
+    <li >
+      <a href="{{ post.url | url }}">
+        <div class="card-1-0-0">
+          <h2>
+            {{ post.data.title }}
+          </h2>
+          <small>
+            <time class="time-1-0-0" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+          </small>
+          <p>{{ post.data.description }}</p>
+        </div>
+      </a>
+    </li>
+  {% endfor %}
+</ul>

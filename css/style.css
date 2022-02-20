@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/**
+ * BASE
+ */
 
 :root {
   --accent-color: #ffa86a;
@@ -18,6 +18,78 @@ html {
   font-family: "Open Sans";
 }
 
+
+body {
+  background-color: var(--dark-500-color);
+  color: var(--white-color);
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: var(--accent-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--white-color);
+}
+
+/**
+ * LAYOUT
+ */
+.layout-constrained-1-0-0 {
+  margin: auto;
+  max-width: 48rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.layout-header-1-0-0 {
+  background-color: var(--dark-500-color);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  color: var(--accent-color);
+  left: 0;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+/**
+ * MODULES
+ */
+
+/**
+ * MODULES:CARD
+ */
+.card-1-0-0 {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  background-color: var(--dark-400-color);
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.card-1-0-0:hover {
+  background-color: var(--dark-300-color);
+}
+
+/**
+ * MODULES:TIME
+ */
+.time-1-0-0 {
+  color: var(--grey-color);
+}
+
 /*
 Name: Duotone Space
 Author: Simurai, adapted from DuoTone themes for Atom (http://simurai.com/projects/2016/01/01/duotone-themes)
@@ -27,7 +99,7 @@ Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 
 code[class*="language-"],
 pre[class*="language-"] {
-  font-family: "Courier New", Menlo, Monaco, "Andale Mono WT", "Andale Mono",
+  font-family: "Noto Sans Mono", Menlo, Monaco, "Andale Mono WT", "Andale Mono",
     "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
     "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L",
     "Courier New", Courier, monospace;
@@ -189,3 +261,4 @@ pre > code.highlight {
     rgba(221, 103, 44, 0)
   );
 }
+

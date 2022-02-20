@@ -14,3 +14,4 @@ const hello = function (arg: string, arg2: number): string {
   const a = () => "helloe";
 };
 ```
+
