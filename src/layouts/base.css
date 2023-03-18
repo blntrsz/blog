@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+    @apply font-bold;
+  }
+
+  h2 {
+    @apply text-xl;
+    @apply font-bold;
+  }
+
+  h3 {
+    @apply text-lg;
+    @apply font-bold;
+  }
+
+  pre {
+    @apply p-2;
+    @apply rounded-md;
+  }
+
+  a {
+    @apply text-orange-600;
+  }
+
+  p > code {
+    @apply bg-zinc-600;
+    @apply rounded-md;
+    @apply rounded-md;
+    @apply pt-1;
+    @apply px-1;
+  }
+
+  ul {
+    @apply list-disc;
+    @apply pl-8;
+  }
+}

@@ -1,12 +1,11 @@
 ---
-import { SITE_DESCRIPTION, SITE_TITLE } from "@/consts";
-import Index from "@/components/Index.md";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "@/consts";
 import BlogList from "@/components/BlogList.astro";
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <Index />
-  <h1>Check out my blog:</h1>
-  <BlogList />
+  <section>
+    <BlogList />
+  </section>
 </BaseLayout>
