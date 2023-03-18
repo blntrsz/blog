@@ -18,7 +18,14 @@ const { Content } = await post.render();
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description}>
-  <FormattedDate className="text-sm text-zinc-200" date={post.data.pubDate} />
+  {
+    post.data.updatedDate && (
+      <FormattedDate
+        className="text-sm text-zinc-200"
+        date={post.data.updatedDate}
+      />
+    )
+  }
   <h1>{post.data.title}</h1>
   <Content />
 </BaseLayout>

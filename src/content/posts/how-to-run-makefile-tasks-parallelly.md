@@ -1,8 +1,8 @@
 ---
 title: "How to run Makefile tasks parallelly"
 description: "This article explains how two tasks can be run parallelly from a Makefile"
-pubDate: "Jul 08 2022"
-heroImage: "/placeholder-hero.jpg"
+pubDate: "Mar 18 2023"
+updatedDate: "Mar 18 2023"
 ---
 
 You have created the following `Makefile` before:
