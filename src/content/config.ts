@@ -15,6 +15,7 @@ const posts = defineCollection({
       .or(z.date())
       .transform((val) => new Date(val)),
     heroImage: z.string().optional(),
+    tags: z.array(z.string()).optional(),
   }),
 });
 

@@ -1,0 +1,54 @@
+---
+import FormattedDate from "@/components/FormattedDate.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "@/consts";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("posts");
+
+type Props = {
+  tag: string;
+};
+
+const { tag } = Astro.props;
+
+const posts = allPosts.filter((post) => {
+  const { tags } = post.data;
+
+  if (!tags) {
+    return false;
+  }
+  return tags.includes(tag);
+});
+
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob("../../content/posts/*.md");
+  const tags: string[] = [
+    ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
+  ].filter(Boolean);
+
+  return tags.map((tag) => ({
+    params: { slug: tag },
+    props: { tag },
+  }));
+}
+---
+
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <h1>Tags:</h1>
+  <ul class="grid gap-4 pl-0 list-none">
+    {
+      posts.map((post) => (
+        <li>
+          <a class="text-white" href={`/posts/${post.slug}`}>
+            <div class="bg-zinc-900 hover:opacity-80 p-4 gap-4 rounded-md w-full flex justify-between">
+              <span class="w-full">{post.data.title}</span>
+              <FormattedDate className="w-28" date={post.data.updatedDate} />
+            </div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <a class="text-center" href="/tags">Check out all the tags</a>
+</BaseLayout>

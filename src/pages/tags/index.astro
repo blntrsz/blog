@@ -1,0 +1,27 @@
+---
+import { SITE_DESCRIPTION, SITE_TITLE } from "@/consts";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const allPosts = await Astro.glob("../../content/posts/*.md");
+const tags = [
+  ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
+].filter(Boolean);
+---
+
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <h1>Tags:</h1>
+  <ul class="flex flex-wrap gap-8 list-none pl-0">
+    {
+      tags.map((tag) => (
+        <li>
+          <a
+            class="text-white hover:opacity-80 rounded-md py-2 px-4 bg-zinc-900"
+            href={`/tags/${tag}`}
+          >
+            #{tag}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

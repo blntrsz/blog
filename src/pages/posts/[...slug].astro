@@ -26,6 +26,22 @@ const { Content } = await post.render();
       />
     )
   }
+  {
+    post.data.tags && (
+      <ul class="flex flex-wrap gap-8 list-none pl-0">
+        {post.data.tags.map((tag) => (
+          <li>
+            <a
+              class="text-white hover:opacity-80 rounded-md py-2 px-4 bg-zinc-900"
+              href={`/tags/${tag}`}
+            >
+              #{tag}
+            </a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
   <h1>{post.data.title}</h1>
   <Content />
 </BaseLayout>
