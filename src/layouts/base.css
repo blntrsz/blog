@@ -32,6 +32,7 @@
     @apply rounded-md;
     @apply rounded-md;
     @apply pt-1;
+    @apply pb-0.5;
     @apply px-1;
   }
 
