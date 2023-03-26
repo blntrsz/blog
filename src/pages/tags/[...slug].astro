@@ -43,9 +43,9 @@ export async function getStaticPaths() {
       posts.map((post) => (
         <li>
           <a class="text-white" href={`/posts/${post.slug}`}>
-            <div class="bg-zinc-900 hover:opacity-80 p-4 gap-4 rounded-md w-full flex justify-between">
-              <span class="w-full">{post.data.title}</span>
-              <FormattedDate className="w-28" date={post.data.updatedDate} />
+            <div class="bg-zinc-900 hover:opacity-80 p-4 sm:gap-4 rounded-md w-full flex sm:justify-between">
+              <span>{post.data.title}</span>
+              <FormattedDate className="hidden sm:block" date={post.data.updatedDate} />
             </div>
           </a>
         </li>
