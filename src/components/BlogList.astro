@@ -23,7 +23,7 @@ const sliceValue = [start, end].filter(Number.isInteger);
           <a class="text-white" href={`/posts/${post.slug}`}>
             <div class="bg-zinc-900 hover:opacity-80 p-4 gap-4 rounded-md w-full flex justify-between">
               <span>{post.data.title}</span>
-              <FormattedDate date={post.data.updatedDate} />
+              <FormattedDate className="invisible sm:visible" date={post.data.updatedDate} />
             </div>
           </a>
         </li>
