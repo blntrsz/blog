@@ -3,6 +3,8 @@ title: "Run Ubuntu as a Docker Container"
 description: "We will go though how to install and run ubuntu as a docker image"
 pubDate: "Mar 26 2023"
 updatedDate: "Mar 26 2023"
+tags:
+  - docker
 ---
 
 Make sure docker is installed on your system. If not, check out the [install docs](https://docs.docker.com/engine/install/).
