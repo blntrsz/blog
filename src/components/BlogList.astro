@@ -21,9 +21,9 @@ const sliceValue = [start, end].filter(Number.isInteger);
       .map((post) => (
         <li>
           <a class="text-white" href={`/posts/${post.slug}`}>
-            <div class="bg-zinc-900 hover:opacity-80 p-4 gap-4 rounded-md w-full flex justify-between">
+            <div class="bg-zinc-900 hover:opacity-80 p-4 sm:gap-4 rounded-md w-full flex sm:justify-between">
               <span>{post.data.title}</span>
-              <FormattedDate className="invisible sm:visible" date={post.data.updatedDate} />
+              <FormattedDate className="hidden sm:block" date={post.data.updatedDate} />
             </div>
           </a>
         </li>
