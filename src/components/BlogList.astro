@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import FormattedDate from "@/components/FormattedDate.astro";
 const posts = (await getCollection("posts")).sort(
-  (a, b) => a.data.updatedDate.valueOf() - b.data.updatedDate.valueOf()
+  (a, b) => b.data.updatedDate.valueOf() - a.data.updatedDate.valueOf()
 );
 
 type Props = {
