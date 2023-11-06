@@ -1,13 +1,10 @@
 import { defineConfig } from "astro/config";
+import aws from "astro-sst/lambda";
 import sitemap from "@astrojs/sitemap";
-
 import tailwind from "@astrojs/tailwind";
 
-// https://astro.build/config
 export default defineConfig({
-  experimental: {
-    viewTransitions: true,
-  },
+  adapter: aws(),
   site: "https://blntrsz.com",
   integrations: [
     sitemap(),

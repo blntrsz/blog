@@ -10,6 +10,8 @@ type Props = {
   tag: string;
 };
 
+export const prerender = true
+
 const { tag } = Astro.props;
 
 const posts = allPosts.filter((post) => {

@@ -3,23 +3,30 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "sst bind astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "plop": "plop"
+    "plop": "plop",
+    "sst:deploy": "sst deploy",
+    "sst:dev": "sst dev",
+    "release": "sst deploy --stage prod"
   },
   "dependencies": {
-    "@astrojs/rss": "^2.4.3",
+    "@astrojs/rss": "^3.0.0",
     "@astrojs/sitemap": "^2.0.1",
-    "@astrojs/tailwind": "^4.0.0",
-    "astro": "^2.9.2",
+    "@astrojs/tailwind": "^5.0.0",
+    "astro": "^3.2.2",
     "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
     "plop": "^3.1.2",
     "prettier": "^3.0.0",
-    "prettier-plugin-astro": "^0.11.0"
+    "prettier-plugin-astro": "^0.11.0",
+    "sst": "^2.26.11",
+    "aws-cdk-lib": "2.95.1",
+    "constructs": "10.2.69",
+    "astro-sst": "^2.26.11"
   }
 }
