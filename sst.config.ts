@@ -15,6 +15,16 @@ export default {
   },
   stacks(app) {
     app.stack(function Site({ stack }) {
+      const customDomainConfig: {
+        customDomain?: { domainName: string; domainAlias: string };
+      } = {};
+
+      if (stack.stage === "prod") {
+        customDomainConfig["customDomain"] = {
+          domainName: "blntrsz.com",
+          domainAlias: "www.blntrsz.com",
+        };
+      }
       const site = new StaticSite(stack, "site", {
         cdk: {
           distribution: {
@@ -42,18 +52,15 @@ function handler(event) {
                   }),
                   eventType: CfFunctionEventType.VIEWER_REQUEST,
                 },
-              ]
-            }
-          }
+              ],
+            },
+          },
         },
-        indexPage: 'index.html',
+        indexPage: "index.html",
         errorPage: "404.html",
         buildOutput: "dist",
         buildCommand: "pnpm run build",
-        customDomain: {
-          domainName: "blntrsz.com",
-          domainAlias: "www.blntrsz.com",
-        },
+        ...customDomainConfig,
       });
       stack.addOutputs({
         url: site.url,
