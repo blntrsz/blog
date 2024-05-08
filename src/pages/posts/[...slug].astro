@@ -44,6 +44,8 @@ const { Content } = await post.render();
       </ul>
     )
   }
-  <h1>{post.data.title}</h1>
-  <Content />
+  <article class="prose xl:prose-xl prose-invert m-auto">
+    <h1>{post.data.title}</h1>
+    <Content />
+  </article>
 </BaseLayout>

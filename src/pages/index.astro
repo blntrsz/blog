@@ -6,7 +6,9 @@ import BlogList from "@/components/BlogList.astro";
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <Index />
-  <h1>Check out my latest posts:</h1>
+  <article class="prose xl:prose-xl prose-invert m-auto">
+    <Index />
+    <h1>Check out my latest posts:</h1>
+  </article>
   <BlogList end={3} />
 </BaseLayout>
